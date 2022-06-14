@@ -1,16 +1,65 @@
 body {
-    width: auto;
+    width: 100%;
     height: auto;
-    background-color: #E5E5E5;
+    background-color: #EEF9BF;
     font-family: sans-serif;
+    position: absolute;
 }
 
 h1 {
-    width: \uto;
+    width: auto;
     height: auto;
     color: #75B79E;
+    margin: 5% 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 64px;
     font-weight: 700;
+    position: relative;
+}
+
+.container{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.front-face{
+    width: 117px;
+    height: 146px;
+    border-radius: 5px;
+    margin: 17px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #A7E9AF;
+}
+
+.front-face img{
+
+    width: 100px;
+    height: 100px;
+
+}
+
+.back-face{
+    width: 117px;
+    height: 146px;
+    border-radius: 5px;
+    margin: 17px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #A7E9AF;
+}
+
+.back-face img{
+
+    width: 100px;
+    height: 100px;
+
 }
