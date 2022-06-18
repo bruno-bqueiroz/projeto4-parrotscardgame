@@ -19,16 +19,25 @@ h1 {
     position: relative;
 }
 
-.container{
-    width: auto;
-    height: auto;
+.frontA{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
+    
+    
+}
+
+.frontB{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 
 }
 
 .front-face{
+    
     width: 117px;
     height: 146px;
     border-radius: 5px;
@@ -37,6 +46,8 @@ h1 {
     align-items: center;
     justify-content: center;
     background-color: #A7E9AF;
+    transition: transform .5s;
+
 }
 
 .front-face img{
@@ -46,7 +57,12 @@ h1 {
 
 }
 
-.back-face{
+.front-face.virada {
+    transform: rotateY(180deg);
+  }
+
+  .back-face{
+   
     width: 117px;
     height: 146px;
     border-radius: 5px;
@@ -55,11 +71,20 @@ h1 {
     align-items: center;
     justify-content: center;
     background-color: #A7E9AF;
+
 }
+
+
+
 
 .back-face img{
 
     width: 100px;
     height: 100px;
+   
 
 }
+
+/*  
+    
+*/
