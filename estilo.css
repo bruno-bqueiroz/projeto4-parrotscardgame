@@ -1,9 +1,14 @@
+
+*{
+    box-sizing: border-box;
+}
 body {
     width: 100%;
     height: auto;
     background-color: #EEF9BF;
     font-family: sans-serif;
     position: absolute;
+    
 }
 
 h1 {
@@ -19,25 +24,22 @@ h1 {
     position: relative;
 }
 
-.frontA{
+
+
+
+.container{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-wrap: wrap;
+    perspective: 1000px;
+
     
     
 }
 
-.frontB{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
 
-}
-
-.front-face{
-    
+.carta{ 
     width: 117px;
     height: 146px;
     border-radius: 5px;
@@ -45,46 +47,36 @@ h1 {
     display:flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     background-color: #A7E9AF;
+    position: relative;
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
     transition: transform .5s;
-
 }
+.carta:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
 
-.front-face img{
-
-    width: 100px;
-    height: 100px;
-
-}
-
-.front-face.virada {
+  .carta.flip {
     transform: rotateY(180deg);
   }
 
-  .back-face{
-   
-    width: 117px;
-    height: 146px;
-    border-radius: 5px;
-    margin: 17px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #A7E9AF;
-
-}
 
 
-
-
-.back-face img{
-
+.front-face, .back-face{
     width: 100px;
     height: 100px;
-   
+    position: absolute;
+    backface-visibility: hidden;
 
 }
 
-/*  
-    
-*/
+.back-face{
+    transform: rotateY(180deg);
+}
+ .oculto {
+    display: none;
+}

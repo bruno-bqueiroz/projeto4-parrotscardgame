@@ -1,59 +1,61 @@
+
 let ncartas = prompt("Com quantas cartas você quer jogar?");
 let i = 0;
+let j = 1;
 
 while (ncartas % 2 !== 0 || ncartas < 4 || ncartas > 14 ){
     ncartas = prompt("Com quantas cartas você quer jogar?");
 }
-
-
 alert ("Joga ai Xomano!");
 
+const index = 2*ncartas;
 
-
-
-
-while(i<ncartas){
+while(i<index){
 function criarCartas(){
     let cartasTemplate = `
-    <div class="front-face"
-    onclick="selecionar(this)">
-        <img src="./imagens/0.png" alt="">  
-
+    <div class="carta">
+        <img class="front-face" img src="./imagens/0.png" alt="Face da Carta">
+        <img class="back-face" img src="./imagens/${j}.gif" alt="Verso da Carta">
     </div>
+ `
+    if (j<7){
+        j++;
+    }else {
+        j=1;
+    }
     
-    `
-    document.querySelector('.frontA').innerHTML += cartasTemplate;
+    
+    i = i+2;
+    document.querySelector('.container').innerHTML += cartasTemplate;
 }
 criarCartas();
-i= i+2;
+
 }
+
+
 
 i = 0;
-while(i<ncartas){
-function criarCartas(){
-    let cartasTemplate = `
-    <div class="front-face"
-    onclick="selecionar(this)">
-        <img src="./imagens/0.png" alt="">  
-    </div>
-    `
-    document.querySelector('.frontB').innerHTML += cartasTemplate;
-}
-criarCartas();
-i= i+2;
-}
 
 
 
 
-function selecionar (elemento) {
-let backcartas = `
-    <div class="back-face">
-    <img src="./imagens/1.gif" alt="">
-    </div>
-    `
-   elemento.classList.add("virada");
-   document.querySelector('.front-face').innerHTML = backcartas;
-   
-}
+const vira = document.querySelectorAll('.carta');
 
+
+let virarCarta = false;
+let primeiraCarta = 0;
+let segundaCarta = 0;
+
+function flipCard() {
+    this.classList.toggle('flip');
+    this.classList.add('flip');
+
+    if (!virarCarta){
+        virarCarta = true;
+        primeiraCarta = this;
+
+    }
+  }
+  
+
+  vira.forEach(card => card.addEventListener('click', flipCard));
